@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  routerLink="/" >Szyfr Cezara</a>
+      </li>
+      <li class="nav-item active">
+          <a class="nav-link" (click)="this.navigation.clickOpenVigenerePage()">Szyfr Vigenère'a</a>
+      </li>
+      <li class="nav-item active">
+          <a class="nav-link" (click)="this.navigation.clickOpenVigenerePage()" >Link</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="mb-3"></div>
+<div class="container"> 
+    <h1>Zadanie 1 - szyfr Cezara</h1>
+      <form>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>podaj text</mat-label>
+            <input type="text" matInput [(ngModel)]="text" name="text" >
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>wartość przesunięcia</mat-label>
+            <input type="number" matInput [(ngModel)]="shiftParameterNg" name="shiftParameterNg" #shiftParameter="ngModel" min="0" pattern="\d+">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-radio-group [(ngModel)]="method"
+                           name="radioButton">
+            <mat-radio-button *ngFor="let method of methods" [value]="method" class="mr-3"  >
+              {{method}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="my-3">
+          <button mat-raised-button color="primary" (click)="codeCezar(shiftParameterNg, text, method)" class="py-2"
+                  [disabled]="!(text && shiftParameterNg && shiftParameter.valid  )">Wykonaj
+          </button>
+        </div>
+        <div>
+          <mat-form-field>
+            <textarea matInput placeholder="Wynik przekodowania" [value]="this.resultText"></textarea>
+          </mat-form-field>
+        </div>
+      </form>
+  </div>
