@@ -172,18 +172,18 @@ export class PlayfairCodeComponent implements OnInit {
           }else{
             resultText = resultText + this.matrixPlayfair[xIndex1][yIndex1-1];
           }
-          if(yIndex2+1 < 0){
+          if(yIndex2-1 < 0){
             resultText = resultText + this.matrixPlayfair[xIndex2][4];
           }else{
             resultText = resultText + this.matrixPlayfair[xIndex2][yIndex2-1];
           }
         }else if(yIndex1 == yIndex2){
-          if(xIndex1+1 < 0){
+          if(xIndex1-1 < 0){
             resultText = resultText + this.matrixPlayfair[4][yIndex1];
           }else{
             resultText = resultText + this.matrixPlayfair[xIndex1-1][yIndex1];
           }
-          if(xIndex2+1 < 0){
+          if(xIndex2-1 < 0){
             resultText = resultText + this.matrixPlayfair[4][yIndex2];
           }else{
             resultText = resultText + this.matrixPlayfair[xIndex2-1][yIndex2];
