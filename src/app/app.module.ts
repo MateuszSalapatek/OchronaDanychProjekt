@@ -17,13 +17,15 @@ import { CezarCodeComponent } from './cezar-code/cezar-code.component';
 import { VigenereCodeComponent } from './vigenere-code/vigenere-code.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
+import { PlayfairCodeComponent } from './playfair-code/playfair-code.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CezarCodeComponent,
-    VigenereCodeComponent
+    VigenereCodeComponent,
+    PlayfairCodeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { RouterModule } from '@angular/router';
     MatMenuModule,
     RouterModule.forRoot([
       { path: '', component: CezarCodeComponent},
-      { path: 'vigenere-code', component: VigenereCodeComponent}
+      { path: 'vigenere-code', component: VigenereCodeComponent},
+      { path: 'playfair-code', component: PlayfairCodeComponent}
     ]),
   ],
   providers: [],

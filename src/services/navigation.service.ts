@@ -13,5 +13,8 @@ export class NavigationService {
     );
   }
 
-
+  clickOpenPlayfairPage(){
+    this.router.navigate(['/playfair-code']
+    );
+  }
 }

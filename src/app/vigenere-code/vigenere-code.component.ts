@@ -30,11 +30,6 @@ export class VigenereCodeComponent implements OnInit {
         this.alphabetTables[i][j] = this.alphabet[(j + i) % this.alphabet.length]
       }
     }
-
-    for (var i = 0; i < this.alphabet.length; i++) {
-      for (var j = 0; j < this.alphabet.length; j++) {
-      }
-    }
     /****/
   }
 
