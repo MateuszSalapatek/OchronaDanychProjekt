@@ -22,12 +22,12 @@ export class VigenereCodeComponent implements OnInit {
 
   ngOnInit() {
     /* create tables with alphabets*/
-    for (var i = 0; i < this.alphabet.length; i++) {
+    for (let i = 0; i < this.alphabet.length; i++) {
       this.alphabetTables[i] = [];
     }
 
-    for (var i = 0; i < this.alphabet.length; i++) {
-      for (var j = 0; j < this.alphabet.length; j++) {
+    for (let i = 0; i < this.alphabet.length; i++) {
+      for (let j = 0; j < this.alphabet.length; j++) {
         this.alphabetTables[i][j] = this.alphabet[(j + i) % this.alphabet.length];
       }
     }
@@ -59,7 +59,9 @@ export class VigenereCodeComponent implements OnInit {
       /*reverse the key for decoding*/
       for (let i = 0; i < keyWithExtraCharacters.length; i++) {
         if (this.alphabet.indexOf(keyWithExtraCharacters.substr(i, 1)) >= 0) {
-          reverseKey = reverseKey + this.alphabet[((this.alphabet.length - this.alphabet.indexOf(keyWithExtraCharacters.substr(i, 1))) % this.alphabet.length)];
+          reverseKey = reverseKey + this.alphabet[
+              ((this.alphabet.length - this.alphabet.indexOf(keyWithExtraCharacters.substr(i, 1))) % this.alphabet.length)
+            ];
         } else {
           reverseKey = reverseKey + keyWithExtraCharacters.substr(i, 1);
         }
