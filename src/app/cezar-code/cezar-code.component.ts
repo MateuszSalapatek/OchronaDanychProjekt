@@ -9,8 +9,6 @@ import {NavigationService} from 'src/services/navigation.service';
   styleUrls: ['./cezar-code.component.scss']
 })
 export class CezarCodeComponent implements OnInit {
-
-  choosedMethod: string = '';
   methods: string[] = ['kodowanie', 'dekodowanie'];
   resultText: string = '';
   form: FormGroup;
