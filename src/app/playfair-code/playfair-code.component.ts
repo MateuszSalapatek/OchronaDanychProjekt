@@ -89,7 +89,7 @@ export class PlayfairCodeComponent implements OnInit {
     /*digram*/
     let pureTextFinal: string = '';
     for (let i = 0; i < pureText.length; i++) {
-      if (this.removeDuplicateCharacters(pureText.substr(i, 2)).length == 1) { /*duplicate value in digram*/
+      if (this.removeDuplicateCharacters(pureText.substr(i, 2)).length === 1) { /*duplicate value in digram*/
         pureTextFinal = pureTextFinal + pureText.substr(i, 1) + 'X';
         pureText = pureText.substr(0, i) + 'X' + pureText.substring(i);
       } else {
@@ -120,8 +120,8 @@ export class PlayfairCodeComponent implements OnInit {
       for (let m = 0; m <= 1; m++) {
         for (let p = 0; p < 5; p++) {
           for (let q = 0; q < 5; q++) {
-            if (this.matrixPlayfair[p][q] == diPureTextTable[i].substr(m, 1)) {
-              if (m == 0) {
+            if (this.matrixPlayfair[p][q] === diPureTextTable[i].substr(m, 1)) {
+              if (m === 0) {
                 xIndex1 = p;
                 yIndex1 = q;
               } else {
@@ -133,8 +133,8 @@ export class PlayfairCodeComponent implements OnInit {
         }
       }
 
-      if (method == 'kodowanie') {
-        if (xIndex1 == xIndex2) {
+      if (method === 'kodowanie') {
+        if (xIndex1 === xIndex2) {
           if (yIndex1 + 1 > 4) {
             resultText = resultText + this.matrixPlayfair[xIndex1][0];
           } else {
@@ -145,7 +145,7 @@ export class PlayfairCodeComponent implements OnInit {
           } else {
             resultText = resultText + this.matrixPlayfair[xIndex2][yIndex2 + 1];
           }
-        } else if (yIndex1 == yIndex2) {
+        } else if (yIndex1 === yIndex2) {
           if (xIndex1 + 1 > 4) {
             resultText = resultText + this.matrixPlayfair[0][yIndex1];
           } else {
@@ -160,7 +160,7 @@ export class PlayfairCodeComponent implements OnInit {
           resultText = resultText + this.matrixPlayfair[xIndex1][yIndex2] + this.matrixPlayfair[xIndex2][yIndex1];
         }
       } else {
-        if (xIndex1 == xIndex2) {
+        if (xIndex1 === xIndex2) {
           if (yIndex1 - 1 < 0) {
             resultText = resultText + this.matrixPlayfair[xIndex1][4];
           } else {
@@ -171,7 +171,7 @@ export class PlayfairCodeComponent implements OnInit {
           } else {
             resultText = resultText + this.matrixPlayfair[xIndex2][yIndex2 - 1];
           }
-        } else if (yIndex1 == yIndex2) {
+        } else if (yIndex1 === yIndex2) {
           if (xIndex1 + 1 < 0) {
             resultText = resultText + this.matrixPlayfair[4][yIndex1];
           } else {
@@ -189,10 +189,10 @@ export class PlayfairCodeComponent implements OnInit {
       console.log(diPureTextTable[i] + ' => ' + resultText.substr(-2, 2));
     }
 
-    if (method == 'dekodowanie') {
+    if (method === 'dekodowanie') {
       let resultTextWithoutX: string = '';
       for (let i = 0; i < resultText.length; i++) {
-        if (resultText.substr(i, 1) != 'X') {
+        if (resultText.substr(i, 1) !== 'X') {
           resultTextWithoutX = resultTextWithoutX + resultText.substr(i, 1);
         }
       }
@@ -203,7 +203,7 @@ export class PlayfairCodeComponent implements OnInit {
 
   removeDuplicateCharacters(string) {
     return string.split('').filter(function(item, pos, self) {
-      return self.indexOf(item) == pos;
+      return self.indexOf(item) === pos;
     }).join('');
   }
 
