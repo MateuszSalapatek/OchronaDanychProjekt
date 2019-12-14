@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { VigenereCodeComponent } from './vigenere-code.component';
+import {VigenereCodeComponent} from './vigenere-code.component';
 
 describe('VigenereCodeComponent', () => {
   let component: VigenereCodeComponent;
@@ -8,9 +8,9 @@ describe('VigenereCodeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VigenereCodeComponent ]
+      declarations: [VigenereCodeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

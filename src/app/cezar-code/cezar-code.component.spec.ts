@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CezarCodeComponent } from './cezar-code.component';
+import {CezarCodeComponent} from './cezar-code.component';
 
 describe('CezarCodeComponent', () => {
   let component: CezarCodeComponent;
@@ -8,9 +8,9 @@ describe('CezarCodeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CezarCodeComponent ]
+      declarations: [CezarCodeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

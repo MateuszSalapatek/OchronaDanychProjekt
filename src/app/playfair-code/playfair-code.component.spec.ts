@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PlayfairCodeComponent } from './playfair-code.component';
+import {PlayfairCodeComponent} from './playfair-code.component';
 
 describe('PlayfairCodeComponent', () => {
   let component: PlayfairCodeComponent;
@@ -8,9 +8,9 @@ describe('PlayfairCodeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlayfairCodeComponent ]
+      declarations: [PlayfairCodeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
