@@ -31,7 +31,6 @@ export class VigenereCodeComponent implements OnInit {
         this.alphabetTables[i][j] = this.alphabet[(j + i) % this.alphabet.length];
       }
     }
-    /****/
   }
 
   codeVigenere(key: string, text: string, method: string) {
@@ -54,7 +53,7 @@ export class VigenereCodeComponent implements OnInit {
       }
     }
 
-    if (method == 'dekodowanie') {
+    if (method === 'dekodowanie') {
       let reverseKey: string = '';
       /*reverse the key for decoding*/
       for (let i = 0; i < keyWithExtraCharacters.length; i++) {
@@ -70,9 +69,10 @@ export class VigenereCodeComponent implements OnInit {
     }
 
     for (let i = 0; i < text.length; i++) {
-      let indexOfSign = this.alphabet.indexOf(text.substr(i, 1));
+      const indexOfSign = this.alphabet.indexOf(text.substr(i, 1));
       if (indexOfSign >= 0) {
-        resultText = resultText + this.alphabetTables[this.alphabet.indexOf(text.substr(i, 1))][this.alphabet.indexOf(keyWithExtraCharacters.substr(i, 1))];
+        resultText = resultText + this.alphabetTables[this.alphabet.indexOf(text.substr(i, 1))]
+          [this.alphabet.indexOf(keyWithExtraCharacters.substr(i, 1))];
       } else {
         resultText = resultText + text.substr(i, 1);
       }
