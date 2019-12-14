@@ -24,8 +24,6 @@ export class PlayfairCodeComponent implements OnInit {
   }
 
   codePlayfair(key: string, text: string, method: string) {
-    // key = "klucz";
-    // text = "CALCOOLATOR jessst najlepsza";
 
     if (!method) {
       this.snackBar.openSnackBar('wybierz metodę', null, 2);
@@ -35,17 +33,14 @@ export class PlayfairCodeComponent implements OnInit {
     /* only upper letter*/
     text = text.toUpperCase();
     key = key.toUpperCase();
-    /***/
 
     /*remove duplicate letter from key*/
     key = this.removeDuplicateCharacters(key);
-    /***/
 
     /* create tables for Playfair matrix*/
     for (let i = 0; i < 5; i++) {
       this.matrixPlayfair[i] = [];
     }
-    /****/
 
     /*filling the Playfair Matrix with key letter*/
     let keyIndex: number = 0;
@@ -71,7 +66,6 @@ export class PlayfairCodeComponent implements OnInit {
           }
       }
     }
-    /***/
 
     console.log('Playfair Matrix:');
     for (let i = 0; i < 5; i++) {
@@ -82,7 +76,6 @@ export class PlayfairCodeComponent implements OnInit {
       console.log(jLetters);
     }
 
-
     /*pure text - delete other signs like bars*/
     let pureText: string = '';
     for (let i = 0; i < text.length; i++) {
@@ -92,7 +85,6 @@ export class PlayfairCodeComponent implements OnInit {
 
     }
     console.log('pureText: ' + pureText);
-    /***/
 
     /*digram*/
     let pureTextFinal: string = '';
@@ -107,7 +99,7 @@ export class PlayfairCodeComponent implements OnInit {
     }
     console.log('pureTextFinal: ' + pureTextFinal);
 
-    let diPureTextTable = [];
+    const diPureTextTable = [];
     let indexPureDiTextTable: number = 0;
     for (let i = 0; i < pureText.length; i++) {
       diPureTextTable[indexPureDiTextTable] = pureTextFinal.substr(i, 2);
@@ -117,7 +109,6 @@ export class PlayfairCodeComponent implements OnInit {
     for (let i = 0; i < diPureTextTable.length; i++) {
       console.log('diPureTextTable: ' + diPureTextTable[i]);
     }
-    /***/
 
     /***szyfrowanie*/
     let resultText: string = '';
@@ -208,7 +199,6 @@ export class PlayfairCodeComponent implements OnInit {
       resultText = resultTextWithoutX;
     }
     this.resultText = resultText;
-    /****/
   }
 
   removeDuplicateCharacters(string) {
