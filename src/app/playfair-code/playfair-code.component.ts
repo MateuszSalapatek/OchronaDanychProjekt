@@ -42,15 +42,15 @@ export class PlayfairCodeComponent implements OnInit {
     /***/
 
     /* create tables for Playfair matrix*/
-    for (var i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
       this.matrixPlayfair[i] = [];
     }
     /****/
 
     /*filling the Playfair Matrix with key letter*/
     let keyIndex: number = 0;
-    for (var i = 0; i < 5; i++) {
-      for (var j = 0; j < 5; j++) {
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j < 5; j++) {
         if (key.substr(keyIndex, 1)) {
           this.matrixPlayfair[i][j] = key.substr(keyIndex, 1);
           keyIndex++;
@@ -58,11 +58,11 @@ export class PlayfairCodeComponent implements OnInit {
       }
     }
 
-    for (var q = 0; q < this.alphabet.length; q++) {
+    for (let q = 0; q < this.alphabet.length; q++) {
       if (key.indexOf(this.alphabet[q]) < 0) { /* fill the rest of matrix other alphabet letters*/
         labelAfterFindLetter:
-          for (var i = 0; i < 5; i++) {
-            for (var j = 0; j < 5; j++) {
+          for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
               if (!this.matrixPlayfair[i][j]) {
                 this.matrixPlayfair[i][j] = this.alphabet[q];
                 break labelAfterFindLetter;
@@ -74,9 +74,9 @@ export class PlayfairCodeComponent implements OnInit {
     /***/
 
     console.log('Playfair Matrix:');
-    for (var i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
       let jLetters: string = '';
-      for (var j = 0; j < 5; j++) {
+      for (let j = 0; j < 5; j++) {
         jLetters = jLetters + this.matrixPlayfair[i][j] + ' ';
       }
       console.log(jLetters);
@@ -127,8 +127,8 @@ export class PlayfairCodeComponent implements OnInit {
       let xIndex2: number = 0;
       let yIndex2: number = 0;
       for (let m = 0; m <= 1; m++) {
-        for (var p = 0; p < 5; p++) {
-          for (var q = 0; q < 5; q++) {
+        for (let p = 0; p < 5; p++) {
+          for (let q = 0; q < 5; q++) {
             if (this.matrixPlayfair[p][q] == diPureTextTable[i].substr(m, 1)) {
               if (m == 0) {
                 xIndex1 = p;
