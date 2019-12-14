@@ -12,7 +12,8 @@ export class PlayfairCodeComponent implements OnInit {
   resultText: string = '';
   methods: string[] = ['kodowanie', 'dekodowanie'];
   private matrixPlayfair = [];
-  private alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'] as string[];
+  private alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+    'Y', 'Z'] as string[];
 
   constructor(private snackBar: SnackbarService,
               private navigation: NavigationService) {
