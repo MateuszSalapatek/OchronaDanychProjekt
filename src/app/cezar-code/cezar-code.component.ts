@@ -40,7 +40,7 @@ export class CezarCodeComponent implements OnInit {
       return;
     }
 
-    if (method == 'dekodowanie') {
+    if (method === 'dekodowanie') {
       shiftParametr = shiftParametr * (-1);
     }
 
