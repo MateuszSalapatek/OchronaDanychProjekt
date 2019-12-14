@@ -52,11 +52,11 @@ export class CezarCodeComponent implements OnInit {
 
     for (let i = 0; i < text.length; i++) {
       let indexOfSign = this.alphabet.indexOf(text.substr(i, 1));
-      if (indexOfSign >= 0) { //to find the sign in alphabet. If sign no exist in aphabet then result is -1
+      if (indexOfSign >= 0) { // to find the sign in alphabet. If sign no exist in aphabet then result is -1
         let indexOfSignAfterMoving = this.alphabet.indexOf(text.substr(i, 1)) + shiftParametr;
-        if (indexOfSignAfterMoving >= this.alphabet.length) { //sign after moving is bigger than aplhapbet lenght, we have to decrease value from beginning of alphabet
+        if (indexOfSignAfterMoving >= this.alphabet.length) { // sign after moving is bigger than aplhapbet lenght, we have to decrease value from beginning of alphabet
           indexOfSignAfterMoving = indexOfSignAfterMoving - this.alphabet.length;
-        } else if (indexOfSignAfterMoving < 0) { //sign after moving is smaller than 0, we have to increase value from end of alphabet
+        } else if (indexOfSignAfterMoving < 0) { // sign after moving is smaller than 0, we have to increase value from end of alphabet
           indexOfSignAfterMoving = this.alphabet.length + indexOfSignAfterMoving;
         }
         resultText = resultText + this.alphabet[indexOfSignAfterMoving];

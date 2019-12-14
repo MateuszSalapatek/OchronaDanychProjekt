@@ -30,19 +30,19 @@ export class PlayfairCodeComponent implements OnInit {
       return;
     }
 
-    /* only upper letter*/
+    /* only upper letter */
     text = text.toUpperCase();
     key = key.toUpperCase();
 
-    /*remove duplicate letter from key*/
+    /* remove duplicate letter from key */
     key = this.removeDuplicateCharacters(key);
 
-    /* create tables for Playfair matrix*/
+    /* create tables for Playfair matrix */
     for (let i = 0; i < 5; i++) {
       this.matrixPlayfair[i] = [];
     }
 
-    /*filling the Playfair Matrix with key letter*/
+    /* filling the Playfair Matrix with key letter */
     let keyIndex: number = 0;
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < 5; j++) {
@@ -54,7 +54,7 @@ export class PlayfairCodeComponent implements OnInit {
     }
 
     for (let q = 0; q < this.alphabet.length; q++) {
-      if (key.indexOf(this.alphabet[q]) < 0) { /* fill the rest of matrix other alphabet letters*/
+      if (key.indexOf(this.alphabet[q]) < 0) { /* fill the rest of matrix other alphabet letters */
         labelAfterFindLetter:
           for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 5; j++) {
@@ -76,7 +76,7 @@ export class PlayfairCodeComponent implements OnInit {
       console.log(jLetters);
     }
 
-    /*pure text - delete other signs like bars*/
+    /* pure text - delete other signs like bars */
     let pureText: string = '';
     for (let i = 0; i < text.length; i++) {
       if (this.alphabet.indexOf(text.substr(i, 1)) >= 0) {
@@ -86,10 +86,10 @@ export class PlayfairCodeComponent implements OnInit {
     }
     console.log('pureText: ' + pureText);
 
-    /*digram*/
+    /* digram */
     let pureTextFinal: string = '';
     for (let i = 0; i < pureText.length; i++) {
-      if (this.removeDuplicateCharacters(pureText.substr(i, 2)).length === 1) { /*duplicate value in digram*/
+      if (this.removeDuplicateCharacters(pureText.substr(i, 2)).length === 1) { /* duplicate value in digram */
         pureTextFinal = pureTextFinal + pureText.substr(i, 1) + 'X';
         pureText = pureText.substr(0, i) + 'X' + pureText.substring(i);
       } else {
@@ -110,7 +110,7 @@ export class PlayfairCodeComponent implements OnInit {
       console.log('diPureTextTable: ' + diPureTextTable[i]);
     }
 
-    /***szyfrowanie*/
+    /* szyfrowanie */
     let resultText: string = '';
     for (let i = 0; i < diPureTextTable.length; i++) {
       let xIndex1: number = 0;
