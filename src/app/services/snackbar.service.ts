@@ -6,11 +6,11 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class SnackbarService {
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(private snackBar: MatSnackBar) {
   }
 
   openSnackBar(message: string, action: string, duration: number) {
-    this._snackBar.open(message, action, {
+    this.snackBar.open(message, action, {
       duration: duration * 1000,
     });
   }

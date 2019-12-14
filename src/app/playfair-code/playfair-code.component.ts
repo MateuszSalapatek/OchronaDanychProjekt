@@ -201,8 +201,8 @@ export class PlayfairCodeComponent implements OnInit {
     this.resultText = resultText;
   }
 
-  removeDuplicateCharacters(string) {
-    return string.split('').filter(function(item, pos, self) {
+  removeDuplicateCharacters(stringArgument) {
+    return stringArgument.split('').filter(function(item, pos, self) {
       return self.indexOf(item) === pos;
     }).join('');
   }
